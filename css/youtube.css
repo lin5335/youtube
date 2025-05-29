@@ -1,0 +1,337 @@
+@charset "utf-8";
+
+body {
+    font-family: Noto Sans KR, Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* 내비게이션 영역 */
+
+#menu {
+    background-color: rgba(255, 255, 255, 255);
+    width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+    background-image: url("../images/youtube/logo1.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+}       
+
+#menu > ul {
+    display: flex;
+    width: 510px;
+    text-align: center;
+    margin-left: auto;
+    justify-content: space-between;
+}
+
+#menu > ul > li {
+    font-size: 16px;
+    line-height: 70px;
+}
+
+#menu > ul > li > a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* 메인 */
+
+.main-video {
+    width: 100%;
+}
+
+.start-box {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.start-box p {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.start-box span {
+    color: red;
+}
+
+/* -------------------------- */
+
+.box {
+    display: flex;
+    width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 150px ;
+
+    align-items: center;
+    justify-content: space-between;
+
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2.0s ease-out;
+}
+
+.box.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.box:nth-child(odd) {
+    padding-left: 200px;
+}
+
+.box h2 {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 30px;
+    line-height: 60px;
+}
+
+.box p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.box img:nth-last-of-type(1) {
+    width: 550px;
+    object-fit: cover;
+}
+
+/* -------------------------- */
+
+.end-box {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.end-box h2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.end-box p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.end-box span {
+    color: red;
+}
+
+/* -------------------------- */
+
+.red-box {
+    background-color: #FF8080;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.red-box h2 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.red-box h2 span {
+    color: red;
+}
+
+.white-box {
+    margin: 0 auto;
+    width: 400px;
+    height: 211px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+
+.white-box-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 30px 10px 30px;
+}
+
+.left-text {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    color: black;
+}
+
+.price strong {
+    font-size: 35px;
+}
+
+.subscribe-btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.red-box p {
+    text-align: center;
+    line-height: 20px;
+}
+
+/* -------------------------- */
+
+.question {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.question p {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+/* -------------------------- */
+
+.question-wrap {
+    background-color: #E9E9E9;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    width: 1000px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.question-title {
+    padding: 30px 50px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.question-title.open::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #aaa;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    transition: none !important;
+}
+
+.question ul li {
+    cursor: pointer;
+}
+
+.question .question-title input[type="button"] {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.question-title::after {
+    content: '∨';
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.question-title.open::after {
+    transform: translateY(-50%) rotate(180deg); /* 위로 회전 */
+  }
+
+.answer {
+    display: none;
+    padding: 20px 50px 30px;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.service-center {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #FFDEA8;
+    border-radius: 50px;
+    margin: 0 auto 150px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.service-center input[type="button"] {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* 푸터 */
+
+#footer {
+    position: relative;
+    padding-top: 1px;
+}
+
+#footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #AAAAAA;
+    z-index: 0;
+}
+
+.footer-inner {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer-logo {
+    width: 110px;
+    height: 25px;
+    margin: 50px 0 20px;
+    background-image: url("../images/youtube/logo2.png");
+    background-repeat: no-repeat;
+}
+
+.footer-inner ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
